@@ -20,6 +20,14 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .venv\Scripts\activate
 pip install -r requirements.txt
 ```
+Instalar Tesseract
+
+Tentar instalar em:
+- C:\Program Files\Tesseract-OCR\tesseract.exe
+ou
+- C:\Program Files (x86)\Tesseract-OCR\tesseract.exe
+
+https://github.com/UB-Mannheim/tesseract/wiki
 
 ## Execução CLI
 
