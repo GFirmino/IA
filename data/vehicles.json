@@ -1,0 +1,8 @@
+{
+  "vehicles": [
+    {"plate": "AA-11-BB", "owner": "João Almeida", "vehicle": "Tesla Model 3"},
+    {"plate": "00-AA-00", "owner": "Marta Costa", "vehicle": "Renault Clio"},
+    {"plate": "12-AB-34", "owner": "Diogo Silva", "vehicle": "Peugeot 208"},
+    {"plate": "CD-56-EF", "owner": "Ana Martins", "vehicle": "Toyota Corolla"}
+  ]
+}
