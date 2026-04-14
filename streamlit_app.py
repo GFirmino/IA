@@ -202,8 +202,16 @@ with st.sidebar:
 
         run = st.form_submit_button("Executar")
 
-llm_model = "llama3.1:8b"
+# Configuração do modelo (muda para "llama3.1" se quiseres)
+llm_model = "llama3.1"
 
+if run:
+    image_path = None
+    if uploaded is not None:
+        out = Path("outputs")
+        out.mkdir(exist_ok=True)
+        image_path = out / uploaded.name
+        image_path.write_bytes(uploaded.getvalue())
 if run:
     image_path = None
     if uploaded is not None:
@@ -221,29 +229,49 @@ if run:
 
     if auth_result["authenticated"]:
         st.success("Matrícula autenticada com sucesso.")
-
+        
         col1, col2 = st.columns(2)
-
         with col1:
             st.markdown("### Dados do veículo")
-            st.markdown(f"**Matrícula:** {auth_result.get('detected_plate') or auth_result.get('plate', 'N/D')}")
+            # Usa o que o OCR detectou ou o que foi escrito no campo
+            display_plate = auth_result.get('detected_plate') or plate
+            st.markdown(f"**Matrícula:** {display_plate}")
             st.markdown(f"**Veículo:** {auth_result.get('vehicle', 'N/D')}")
-
         with col2:
             st.markdown("### Dados do proprietário")
             st.markdown(f"**Nome:** {auth_result.get('owner', 'N/D')}")
             st.markdown(f"**Origem da leitura:** {auth_result.get('source', 'N/D')}")
+            
+        # --- AQUI CONTINUA O RESTO DO TEU CÓDIGO DE PROCURA ---
+        results = (
+            run_all_algorithms(origin, goal, depth_limit=depth_limit)
+            if algorithm == "all"
+            else {algorithm: run_algorithm(algorithm, origin, goal, depth_limit=depth_limit)}
+        )
+        
+        # (Aqui metes o código que gera o PDF e as Atrações que fizemos antes)
 
     else:
-        st.error(auth_result.get("message", "Falha na autenticação da matrícula."))
-        st.json(auth_result)
-        st.stop()
+        # Se NÃO estiver autenticado
+        st.error(auth_result.get("message", "A matrícula não está registada no sistema."))
+        
+        # Pega na matrícula que falhou (seja do OCR ou do input manual)
+        failed_plate = auth_result.get('detected_plate') or plate
+        
+        if failed_plate:
+            with st.expander(f"📝 Registar Novo Veículo ({failed_plate})"):
+                new_owner = st.text_input("Nome do Proprietário")
+                new_model = st.text_input("Modelo do Veículo (ex: Tesla Model 3)")
+                if st.button("Gravar Registo"):
+                    if new_owner and new_model:
+                        from src.auth import register_new_vehicle # Garante que a função existe
+                        register_new_vehicle(failed_plate, new_owner, new_model)
+                        st.success("✅ Veículo registado! Clique em 'Executar' novamente para entrar.")
+                    else:
+                        st.error("Preencha todos os campos.")
+        
+        st.stop() # Importante: pára aqui para não tentar correr algoritmos sem login
 
-    results = (
-        run_all_algorithms(origin, goal, depth_limit=depth_limit)
-        if algorithm == "all"
-        else {algorithm: run_algorithm(algorithm, origin, goal, depth_limit=depth_limit)}
-    )
 
     st.subheader("Resultados de procura")
 
@@ -278,19 +306,30 @@ if run:
                 df_iterations = build_iterations_dataframe(result["iterations"])
                 st.dataframe(df_iterations, use_container_width=True)
 
-    st.subheader("Atrações principais")
-    attractions = {}
-    cols = st.columns(2)
+    # =========================================================================
+    # --- CARREGAR ATRAÇÕES ---
+    # =========================================================================
+    st.session_state['last_origin'] = origin
+    st.session_state['last_goal'] = goal
+    
+    # 1. Tenta carregar pelo LLM
+    atr_origem = fetch_city_attractions(origin, model=llm_model)
+    atr_destino = fetch_city_attractions(goal, model=llm_model)
 
-    for idx, city in enumerate(sorted({origin, goal})):
-        data = fetch_city_attractions(city, model=llm_model) or get_city_attractions_fallback(city)
-        attractions[city] = data
+    # 2. Verifica se a origem falhou ou deu "No-Name"
+    if not atr_origem or (len(atr_origem) > 0 and "No-Name" in atr_origem[0].get('name', '')):
+        atr_origem = get_city_attractions_fallback(origin)
 
-        with cols[idx % 2]:
-            st.markdown(f"### {city}")
-            for item in data:
-                st.markdown(f"- **{item['name']}** — {item['description']}")
+    # 3. Verifica se o destino falhou ou deu "No-Name"
+    if not atr_destino or (len(atr_destino) > 0 and "No-Name" in atr_destino[0].get('name', '')):
+        atr_destino = get_city_attractions_fallback(goal)
 
+    # 4. Guarda no session_state para usar no PDF e na interface
+    st.session_state['atracoes_origem'] = atr_origem
+    st.session_state['atracoes_destino'] = atr_destino
+    # =========================================================================
+    # --- GERAR HISTÓRICO E RELATÓRIO ---
+    # =========================================================================
     history_entry = {
         "timestamp": now_iso(),
         "vehicle": auth_result,
@@ -299,7 +338,10 @@ if run:
         "algorithm": algorithm,
         "depth_limit": int(depth_limit),
         "results": results,
-        "attractions": attractions,
+        "attractions": {
+            "origem": st.session_state['atracoes_origem'],
+            "destino": st.session_state['atracoes_destino']
+        },
     }
 
     save_history_entry(history_entry)
@@ -317,6 +359,14 @@ if run:
         mime="application/pdf",
     )
 
+
+# =====================================================================
+# --- ELEMENTOS FIXOS (Aparecem sempre na página) ---
+# =====================================================================
+
+st.divider()
+
+# --- HISTÓRICO ---
 st.subheader("Histórico de pesquisas")
 history = read_history()
 
@@ -328,3 +378,30 @@ if history:
         st.json(history)
 else:
     st.info("Ainda não existe histórico.")
+
+st.divider()
+
+# --- ATRAÇÕES (No fundo da página) ---
+if 'atracoes_origem' in st.session_state and 'atracoes_destino' in st.session_state:
+    st.subheader("📍 Sugestões Turísticas (Última Pesquisa)")
+    c_att_1, c_att_2 = st.columns(2)
+
+    with c_att_1:
+        st.markdown(f"### {st.session_state.get('last_origin', 'Origem')}")
+        
+        if st.session_state['atracoes_origem']:
+            for atracao in st.session_state['atracoes_origem']:
+                st.write(f"**{atracao.get('name', 'Atração')}**")
+                st.caption(atracao.get('description', ''))
+        else:
+            st.warning("Não foi possível carregar atrações para esta cidade.")
+
+    with c_att_2:
+        st.markdown(f"### {st.session_state.get('last_goal', 'Destino')}")
+        
+        if st.session_state['atracoes_destino']:
+            for atracao in st.session_state['atracoes_destino']:
+                st.write(f"**{atracao.get('name', 'Atração')}**")
+                st.caption(atracao.get('description', ''))
+        else:
+            st.warning("Não foi possível carregar atrações para esta cidade.")
