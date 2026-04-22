@@ -1,0 +1,14 @@
+{
+    "AA-11-BB": {
+        "owner": "João Silva",
+        "vehicle": "Tesla Model 3"
+    },
+    "CC-22-DD": {
+        "owner": "Maria Oliveira",
+        "vehicle": "Renault Zoe"
+    },
+    "PL-30-MR": {
+        "owner": "Radley",
+        "vehicle": "MIATAA"
+    }
+}

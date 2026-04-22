@@ -212,13 +212,6 @@ if run:
         out.mkdir(exist_ok=True)
         image_path = out / uploaded.name
         image_path.write_bytes(uploaded.getvalue())
-if run:
-    image_path = None
-    if uploaded is not None:
-        out = Path("outputs")
-        out.mkdir(exist_ok=True)
-        image_path = out / uploaded.name
-        image_path.write_bytes(uploaded.getvalue())
 
     auth_result = authenticate_vehicle(
         plate=plate or None,
@@ -230,10 +223,13 @@ if run:
     if auth_result["authenticated"]:
         st.success("Matrícula autenticada com sucesso.")
         
+        # Limpar o estado de registo caso existisse de uma tentativa anterior
+        if "plate_to_register" in st.session_state:
+            del st.session_state["plate_to_register"]
+        
         col1, col2 = st.columns(2)
         with col1:
             st.markdown("### Dados do veículo")
-            # Usa o que o OCR detectou ou o que foi escrito no campo
             display_plate = auth_result.get('detected_plate') or plate
             st.markdown(f"**Matrícula:** {display_plate}")
             st.markdown(f"**Veículo:** {auth_result.get('vehicle', 'N/D')}")
@@ -242,122 +238,129 @@ if run:
             st.markdown(f"**Nome:** {auth_result.get('owner', 'N/D')}")
             st.markdown(f"**Origem da leitura:** {auth_result.get('source', 'N/D')}")
             
-        # --- AQUI CONTINUA O RESTO DO TEU CÓDIGO DE PROCURA ---
+        # =========================================================================
+        # --- CÓDIGO DE PROCURA ---
+        # =========================================================================
         results = (
             run_all_algorithms(origin, goal, depth_limit=depth_limit)
             if algorithm == "all"
             else {algorithm: run_algorithm(algorithm, origin, goal, depth_limit=depth_limit)}
         )
+
+        st.subheader("Resultados de procura")
+
+        for name, result in results.items():
+            pretty_name = ALGORITHM_NAMES.get(name, name)
+
+            with st.expander(pretty_name, expanded=True):
+                st.markdown(f"**Caminho final:** {' → '.join(result['path']) if result['path'] else 'Sem caminho'}")
+                st.markdown(f"**Distância final:** {result['cost']} km")
+                st.markdown(f"**Nós expandidos:** {result['expanded_nodes']}")
+                st.markdown(f"**Sucesso:** {'Sim' if result['success'] else 'Não'}")
+
+                if result["path"]:
+                    col_map1, col_map2 = st.columns(2)
+                    with col_map1:
+                        fig = draw_path_graph(result["path"])
+                        st.pyplot(fig)
+                        plt.close(fig)
+
+                    with col_map2:
+                        st_folium(
+                            draw_portugal_path_map(result["path"]),
+                            width=700,
+                            height=500,
+                            returned_objects=[],
+                            key=f"map_{name}_{origin}_{goal}",
+                        )
+
+                if result["iterations"]:
+                    st.markdown("**Iterações do algoritmo**")
+                    df_iterations = build_iterations_dataframe(result["iterations"])
+                    st.dataframe(df_iterations, use_container_width=True)
+
+        # =========================================================================
+        # --- CARREGAR ATRAÇÕES (Agora só corre se a autenticação tiver sucesso) ---
+        # =========================================================================
+        st.session_state['last_origin'] = origin
+        st.session_state['last_goal'] = goal
         
-        # (Aqui metes o código que gera o PDF e as Atrações que fizemos antes)
+        # 1. Tenta carregar pelo LLM
+        atr_origem = fetch_city_attractions(origin, model=llm_model)
+        atr_destino = fetch_city_attractions(goal, model=llm_model)
+
+        # 2. Verifica se a origem falhou ou deu "No-Name"
+        if not atr_origem or (len(atr_origem) > 0 and "No-Name" in atr_origem[0].get('name', '')):
+            atr_origem = get_city_attractions_fallback(origin)
+
+        # 3. Verifica se o destino falhou ou deu "No-Name"
+        if not atr_destino or (len(atr_destino) > 0 and "No-Name" in atr_destino[0].get('name', '')):
+            atr_destino = get_city_attractions_fallback(goal)
+
+        # 4. Guarda no session_state para usar no PDF e na interface
+        st.session_state['atracoes_origem'] = atr_origem
+        st.session_state['atracoes_destino'] = atr_destino
+
+        # =========================================================================
+        # --- GERAR HISTÓRICO E RELATÓRIO (Agora tem acesso correto aos results) ---
+        # =========================================================================
+        history_entry = {
+            "timestamp": now_iso(),
+            "vehicle": auth_result,
+            "origin": origin,
+            "goal": goal,
+            "algorithm": algorithm,
+            "depth_limit": int(depth_limit),
+            "results": results,
+            "attractions": {
+                "origem": st.session_state['atracoes_origem'],
+                "destino": st.session_state['atracoes_destino']
+            },
+        }
+
+        save_history_entry(history_entry)
+
+        out = Path("outputs")
+        out.mkdir(exist_ok=True)
+        pdf_path = out / f"relatorio_{origin}_{goal}_{algorithm}.pdf"
+        build_pdf_report(pdf_path, history_entry)
+
+        st.success(f"Relatório gerado: {pdf_path}")
+        st.download_button(
+            "Descarregar PDF",
+            pdf_path.read_bytes(),
+            file_name=pdf_path.name,
+            mime="application/pdf",
+        )
 
     else:
-        # Se NÃO estiver autenticado
+        # Se falhar a autenticação, avisamos e guardamos a matrícula na sessão
         st.error(auth_result.get("message", "A matrícula não está registada no sistema."))
-        
-        # Pega na matrícula que falhou (seja do OCR ou do input manual)
         failed_plate = auth_result.get('detected_plate') or plate
-        
         if failed_plate:
-            with st.expander(f"📝 Registar Novo Veículo ({failed_plate})"):
-                new_owner = st.text_input("Nome do Proprietário")
-                new_model = st.text_input("Modelo do Veículo (ex: Tesla Model 3)")
-                if st.button("Gravar Registo"):
-                    if new_owner and new_model:
-                        from src.auth import register_new_vehicle # Garante que a função existe
-                        register_new_vehicle(failed_plate, new_owner, new_model)
-                        st.success("✅ Veículo registado! Clique em 'Executar' novamente para entrar.")
-                    else:
-                        st.error("Preencha todos os campos.")
-        
-        st.stop() # Importante: pára aqui para não tentar correr algoritmos sem login
+            st.session_state['plate_to_register'] = failed_plate
 
 
-    st.subheader("Resultados de procura")
-
-    for name, result in results.items():
-        pretty_name = ALGORITHM_NAMES.get(name, name)
-
-        with st.expander(pretty_name, expanded=True):
-            st.markdown(f"**Caminho final:** {' → '.join(result['path']) if result['path'] else 'Sem caminho'}")
-            st.markdown(f"**Distância final:** {result['cost']} km")
-            st.markdown(f"**Nós expandidos:** {result['expanded_nodes']}")
-            st.markdown(f"**Sucesso:** {'Sim' if result['success'] else 'Não'}")
-
-            if result["path"]:
-                col1, col2 = st.columns(2)
-
-                with col1:
-                    fig = draw_path_graph(result["path"])
-                    st.pyplot(fig)
-                    plt.close(fig)
-
-                with col2:
-                    st_folium(
-                        draw_portugal_path_map(result["path"]),
-                        width=700,
-                        height=500,
-                        returned_objects=[],
-                        key=f"map_{name}_{origin}_{goal}",
-                    )
-
-            if result["iterations"]:
-                st.markdown("**Iterações do algoritmo**")
-                df_iterations = build_iterations_dataframe(result["iterations"])
-                st.dataframe(df_iterations, use_container_width=True)
-
-    # =========================================================================
-    # --- CARREGAR ATRAÇÕES ---
-    # =========================================================================
-    st.session_state['last_origin'] = origin
-    st.session_state['last_goal'] = goal
+# =====================================================================
+# --- SISTEMA DE REGISTO (Fica fora do `if run:` para não desaparecer) ---
+# =====================================================================
+if "plate_to_register" in st.session_state:
+    failed_plate = st.session_state['plate_to_register']
+    st.warning(f"Matrícula {failed_plate} desconhecida. Registe o veículo para poder aceder ao sistema:")
     
-    # 1. Tenta carregar pelo LLM
-    atr_origem = fetch_city_attractions(origin, model=llm_model)
-    atr_destino = fetch_city_attractions(goal, model=llm_model)
-
-    # 2. Verifica se a origem falhou ou deu "No-Name"
-    if not atr_origem or (len(atr_origem) > 0 and "No-Name" in atr_origem[0].get('name', '')):
-        atr_origem = get_city_attractions_fallback(origin)
-
-    # 3. Verifica se o destino falhou ou deu "No-Name"
-    if not atr_destino or (len(atr_destino) > 0 and "No-Name" in atr_destino[0].get('name', '')):
-        atr_destino = get_city_attractions_fallback(goal)
-
-    # 4. Guarda no session_state para usar no PDF e na interface
-    st.session_state['atracoes_origem'] = atr_origem
-    st.session_state['atracoes_destino'] = atr_destino
-    # =========================================================================
-    # --- GERAR HISTÓRICO E RELATÓRIO ---
-    # =========================================================================
-    history_entry = {
-        "timestamp": now_iso(),
-        "vehicle": auth_result,
-        "origin": origin,
-        "goal": goal,
-        "algorithm": algorithm,
-        "depth_limit": int(depth_limit),
-        "results": results,
-        "attractions": {
-            "origem": st.session_state['atracoes_origem'],
-            "destino": st.session_state['atracoes_destino']
-        },
-    }
-
-    save_history_entry(history_entry)
-
-    out = Path("outputs")
-    out.mkdir(exist_ok=True)
-    pdf_path = out / f"relatorio_{origin}_{goal}_{algorithm}.pdf"
-    build_pdf_report(pdf_path, history_entry)
-
-    st.success(f"Relatório gerado: {pdf_path}")
-    st.download_button(
-        "Descarregar PDF",
-        pdf_path.read_bytes(),
-        file_name=pdf_path.name,
-        mime="application/pdf",
-    )
+    with st.form("form_registo"):
+        new_owner = st.text_input("Nome do Proprietário")
+        new_model = st.text_input("Modelo do Veículo (ex: Tesla Model 3)")
+        submit_registo = st.form_submit_button("Gravar Registo")
+        
+        if submit_registo:
+            if new_owner and new_model:
+                from src.auth import register_new_vehicle
+                register_new_vehicle(failed_plate, new_owner, new_model)
+                st.success("✅ Veículo registado com sucesso! Clique em 'Executar' na barra lateral para continuar.")
+                del st.session_state['plate_to_register'] # Limpa a memória para fechar a caixa de registo
+            else:
+                st.error("Preencha todos os campos para registar.")
 
 
 # =====================================================================
