@@ -53,6 +53,9 @@ ollama pull llama3.1:8b
 ```bash
 ollama run llama3.1:8b
 ```
+```bash
+python -m pip install ollama
+```
 
 O projeto tenta usar o Ollama em `http://localhost:11434`. Se não estiver disponível, usa descrições locais de fallback.
 
