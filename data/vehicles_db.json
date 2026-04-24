@@ -10,5 +10,17 @@
     "PL-30-MR": {
         "owner": "Radley",
         "vehicle": "MIATAA"
+    },
+    "45-PH-85": {
+        "owner": "Fábio Magalhães",
+        "vehicle": "Peugeot 208"
+    },
+    "35-PH-85": {
+        "owner": "Ismael Magalhães",
+        "vehicle": "Fiat Punto"
+    },
+    "12-AA-34": {
+        "owner": "Senhor Teste",
+        "vehicle": "1977 Leyland Cars Mini 1000 Mark IV"
     }
 }

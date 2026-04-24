@@ -98,7 +98,6 @@ def build_pdf_report(output_path: str | Path, payload: dict):
     )
     story.append(Spacer(1, 0.4 * cm))
 
-    # Resumo dos algoritmos
     story.append(Paragraph("Resumo dos algoritmos", h1))
 
     summary_table_data = [[
@@ -112,11 +111,12 @@ def build_pdf_report(output_path: str | Path, payload: dict):
     for name, result in payload["results"].items():
         pretty_name = ALGORITHM_NAMES.get(name, name)
         final_path = " → ".join(result["path"]) if result["path"] else "Sem caminho"
+        distance_text = f'{result["cost"]} km' if result["success"] else "Não aplicável"
 
         summary_table_data.append([
             p(pretty_name, table_cell_center),
             p(final_path),
-            p(str(result["cost"]), table_cell_center),
+            p(distance_text, table_cell_center),
             p(str(result["expanded_nodes"]), table_cell_center),
             p("Sim" if result["success"] else "Não", table_cell_center),
         ])
@@ -144,7 +144,6 @@ def build_pdf_report(output_path: str | Path, payload: dict):
     story.append(summary_table)
     story.append(Spacer(1, 0.4 * cm))
 
-    # Iterações
     label_map = {
         "g": "Custo acumulado (g)",
         "h": "Heurística (h)",
@@ -156,15 +155,12 @@ def build_pdf_report(output_path: str | Path, payload: dict):
 
     for name, result in payload["results"].items():
         pretty_name = ALGORITHM_NAMES.get(name, name)
+        final_path = " → ".join(result["path"]) if result["path"] else "Sem caminho"
+        distance_text = f'{result["cost"]} km' if result["success"] else "Não aplicável"
 
         story.append(Paragraph(f"Iterações — {pretty_name}", h1))
-        story.append(
-            Paragraph(
-                f"Caminho final: {' → '.join(result['path']) if result['path'] else 'Sem caminho'}",
-                body,
-            )
-        )
-        story.append(Paragraph(f"Distância final: {result['cost']}", body))
+        story.append(Paragraph(f"Caminho final: {final_path}", body))
+        story.append(Paragraph(f"Distância final: {distance_text}", body))
         story.append(
             Paragraph(
                 f"Número de iterações registadas: {len(result['iterations'])}",
@@ -181,6 +177,7 @@ def build_pdf_report(output_path: str | Path, payload: dict):
 
         for idx, item in enumerate(result["iterations"][:20], start=1):
             metrics_lines = []
+
             for k, v in item.items():
                 if k not in {"expanded_city", "path"}:
                     label = label_map.get(k, k.replace("_", " ").capitalize())
@@ -217,12 +214,12 @@ def build_pdf_report(output_path: str | Path, payload: dict):
         story.append(iter_table)
         story.append(Spacer(1, 0.3 * cm))
 
-    # Atrações
     story.append(PageBreak())
     story.append(Paragraph("Atrações principais", h1))
 
     for city, items in payload["attractions"].items():
         story.append(Paragraph(city, styles["Heading2"]))
+
         for item in items:
             story.append(
                 Paragraph(

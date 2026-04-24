@@ -181,6 +181,12 @@ st.caption("Aplicação para procurar caminhos entre cidades portuguesas com aut
 with st.sidebar:
     st.header("Configuração")
 
+    selected_algorithm_label = st.selectbox(
+        "Algoritmo",
+        list(ALGORITHM_OPTIONS.keys())
+    )
+    algorithm = ALGORITHM_OPTIONS[selected_algorithm_label]
+
     with st.form("search_form"):
         plate = st.text_input("Matrícula")
         uploaded = st.file_uploader("Imagem da matrícula", type=["png", "jpg", "jpeg"])
@@ -188,22 +194,20 @@ with st.sidebar:
         origin = st.selectbox("Origem", CITIES, index=CITIES.index("Aveiro"))
         goal = st.selectbox("Destino", CITIES, index=CITIES.index("Faro"))
 
-        selected_algorithm_label = st.selectbox("Algoritmo", list(ALGORITHM_OPTIONS.keys()))
-        algorithm = ALGORITHM_OPTIONS[selected_algorithm_label]
-
         depth_limit = 10
-        if selected_algorithm_label == "Profundidade Limitada":
+        if selected_algorithm_label in ["Todos", "Profundidade Limitada"]:
             depth_limit = st.number_input(
                 "Limite de profundidade",
-                min_value=1,
+                min_value=2,
                 max_value=50,
                 value=10,
+                step=1,
             )
 
         run = st.form_submit_button("Executar")
 
-# Configuração do modelo (muda para "llama3.1" se quiseres)
-llm_model = "llama3.1"
+# Configuração do modelo Ollama instalado localmente
+llm_model = "llama3.1:8b"
 
 if run:
     image_path = None
@@ -254,7 +258,8 @@ if run:
 
             with st.expander(pretty_name, expanded=True):
                 st.markdown(f"**Caminho final:** {' → '.join(result['path']) if result['path'] else 'Sem caminho'}")
-                st.markdown(f"**Distância final:** {result['cost']} km")
+                distance_text = f"{result['cost']} km" if result["success"] else "Não aplicável"
+                st.markdown(f"**Distância final:** {distance_text}")
                 st.markdown(f"**Nós expandidos:** {result['expanded_nodes']}")
                 st.markdown(f"**Sucesso:** {'Sim' if result['success'] else 'Não'}")
 
