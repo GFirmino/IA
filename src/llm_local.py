@@ -3,7 +3,7 @@ import ollama
 import streamlit as st
 
 @st.cache_data(show_spinner="A consultar guia turístico local...")
-def fetch_city_attractions(city_name: str, model: str = "llama3.1") -> list:
+def fetch_city_attractions(city_name: str, model: str = "llama3.1:8b") -> list:
     # Usamos aspas triplas para evitar erros de sintaxe com o JSON interno
     prompt = f"""
     És um guia turístico de Portugal. 

@@ -55309,5 +55309,3635 @@
         }
       ]
     }
+  },
+  {
+    "timestamp": "2026-04-23T21:38:04",
+    "vehicle": {
+      "authenticated": true,
+      "detected_plate": "45-PH-85",
+      "owner": "Fábio Magalhães",
+      "vehicle": "Peugeot 208",
+      "source": "Manual"
+    },
+    "origin": "Bragança",
+    "goal": "Évora",
+    "algorithm": "all",
+    "depth_limit": 10,
+    "results": {
+      "ucs": {
+        "algorithm": "ucs",
+        "path": [
+          "Bragança",
+          "Guarda",
+          "Castelo Branco",
+          "Évora"
+        ],
+        "cost": 511,
+        "iterations": [
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Bragança"
+            ],
+            "g": 0,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Bragança",
+              "Vila Real"
+            ],
+            "g": 137,
+            "frontier_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Bragança",
+              "Guarda"
+            ],
+            "g": 202,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Braga"
+            ],
+            "g": 243,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Viseu"
+            ],
+            "g": 247,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Porto"
+            ],
+            "g": 253,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Braga",
+              "Viana do Castelo"
+            ],
+            "g": 291,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco"
+            ],
+            "g": 308,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Porto",
+              "Aveiro"
+            ],
+            "g": 321,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Viseu",
+              "Aveiro"
+            ],
+            "g": 342,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Viseu",
+              "Coimbra"
+            ],
+            "g": 343,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Portalegre",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Portalegre"
+            ],
+            "g": 388,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Viseu",
+              "Coimbra",
+              "Leiria"
+            ],
+            "g": 410,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Porto",
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 436,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Viseu",
+              "Coimbra",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 480,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Évora"
+            ],
+            "g": 511,
+            "frontier_size_after_pop": 1
+          }
+        ],
+        "expanded_nodes": 16,
+        "success": true
+      },
+      "dls": {
+        "algorithm": "dls",
+        "path": [
+          "Bragança",
+          "Guarda",
+          "Castelo Branco",
+          "Coimbra",
+          "Aveiro",
+          "Leiria",
+          "Lisboa",
+          "Faro",
+          "Beja",
+          "Setúbal",
+          "Évora"
+        ],
+        "cost": 1475,
+        "iterations": [
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Bragança"
+            ],
+            "g": 0,
+            "depth": 0,
+            "stack_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Bragança",
+              "Guarda"
+            ],
+            "g": 202,
+            "depth": 1,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco"
+            ],
+            "g": 308,
+            "depth": 2,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Coimbra"
+            ],
+            "g": 467,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Coimbra",
+              "Aveiro"
+            ],
+            "g": 535,
+            "depth": 4,
+            "stack_size_after_pop": 7
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Coimbra",
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 650,
+            "depth": 5,
+            "stack_size_after_pop": 9
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Coimbra",
+              "Aveiro",
+              "Leiria",
+              "Lisboa"
+            ],
+            "g": 779,
+            "depth": 6,
+            "stack_size_after_pop": 10
+          },
+          {
+            "expanded_city": "Faro",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Coimbra",
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Faro"
+            ],
+            "g": 1078,
+            "depth": 7,
+            "stack_size_after_pop": 13
+          },
+          {
+            "expanded_city": "Beja",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Coimbra",
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Faro",
+              "Beja"
+            ],
+            "g": 1230,
+            "depth": 8,
+            "stack_size_after_pop": 14
+          },
+          {
+            "expanded_city": "Setúbal",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Coimbra",
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Faro",
+              "Beja",
+              "Setúbal"
+            ],
+            "g": 1372,
+            "depth": 9,
+            "stack_size_after_pop": 15
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Coimbra",
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Faro",
+              "Beja",
+              "Setúbal",
+              "Évora"
+            ],
+            "g": 1475,
+            "depth": 10,
+            "stack_size_after_pop": 15
+          }
+        ],
+        "expanded_nodes": 11,
+        "success": true
+      },
+      "greedy": {
+        "algorithm": "greedy",
+        "path": [
+          "Bragança",
+          "Guarda",
+          "Castelo Branco",
+          "Évora"
+        ],
+        "cost": 511,
+        "iterations": [
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Bragança"
+            ],
+            "g": 0,
+            "h": 381.35,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Bragança",
+              "Guarda"
+            ],
+            "g": 202,
+            "h": 229.8,
+            "frontier_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco"
+            ],
+            "g": 308,
+            "h": 146.59,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Évora"
+            ],
+            "g": 511,
+            "h": 0.0,
+            "frontier_size_after_pop": 5
+          }
+        ],
+        "expanded_nodes": 4,
+        "success": true
+      },
+      "astar": {
+        "algorithm": "astar",
+        "path": [
+          "Bragança",
+          "Guarda",
+          "Castelo Branco",
+          "Évora"
+        ],
+        "cost": 511,
+        "iterations": [
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Bragança"
+            ],
+            "g": 0,
+            "h": 381.35,
+            "f": 381.35,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Bragança",
+              "Guarda"
+            ],
+            "g": 202,
+            "h": 229.8,
+            "f": 431.8,
+            "frontier_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Bragança",
+              "Vila Real"
+            ],
+            "g": 137,
+            "h": 303.56,
+            "f": 440.56,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco"
+            ],
+            "g": 308,
+            "h": 146.59,
+            "f": 454.59000000000003,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Bragança",
+              "Vila Real",
+              "Viseu"
+            ],
+            "g": 247,
+            "h": 231.99,
+            "f": 478.99,
+            "frontier_size_after_pop": 6
+          },
+          {
+            "expanded_city": "Portalegre",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Portalegre"
+            ],
+            "g": 388,
+            "h": 96.72,
+            "f": 484.72,
+            "frontier_size_after_pop": 7
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Bragança",
+              "Guarda",
+              "Castelo Branco",
+              "Évora"
+            ],
+            "g": 511,
+            "h": 0.0,
+            "f": 511.0,
+            "frontier_size_after_pop": 6
+          }
+        ],
+        "expanded_nodes": 7,
+        "success": true
+      }
+    },
+    "attractions": {
+      "origem": [
+        {
+          "name": "Castelo de Bragança",
+          "description": "Castelo bem preservado com vista sobre a cidade."
+        },
+        {
+          "name": "Domus Municipalis",
+          "description": "Edifício histórico raro em Portugal."
+        },
+        {
+          "name": "Parque Natural de Montesinho",
+          "description": "Área natural com grande biodiversidade."
+        }
+      ],
+      "destino": [
+        {
+          "name": "Templo Romano",
+          "description": "Ruínas bem preservadas do período romano."
+        },
+        {
+          "name": "Capela dos Ossos",
+          "description": "Capela conhecida pela decoração com ossos humanos."
+        },
+        {
+          "name": "Sé de Évora",
+          "description": "Catedral com vista sobre a cidade."
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-23T21:43:52",
+    "vehicle": {
+      "authenticated": true,
+      "detected_plate": "AA-11-BB",
+      "owner": "João Silva",
+      "vehicle": "Tesla Model 3",
+      "source": "Manual"
+    },
+    "origin": "Vila Real",
+    "goal": "Leiria",
+    "algorithm": "ucs",
+    "depth_limit": 10,
+    "results": {
+      "ucs": {
+        "algorithm": "ucs",
+        "path": [
+          "Vila Real",
+          "Viseu",
+          "Coimbra",
+          "Leiria"
+        ],
+        "cost": 273,
+        "iterations": [
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Vila Real"
+            ],
+            "g": 0,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Vila Real",
+              "Braga"
+            ],
+            "g": 106,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Vila Real",
+              "Viseu"
+            ],
+            "g": 110,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Vila Real",
+              "Porto"
+            ],
+            "g": 116,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 137,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Vila Real",
+              "Braga",
+              "Viana do Castelo"
+            ],
+            "g": 154,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Vila Real",
+              "Guarda"
+            ],
+            "g": 157,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Vila Real",
+              "Porto",
+              "Aveiro"
+            ],
+            "g": 184,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Vila Real",
+              "Viseu",
+              "Aveiro"
+            ],
+            "g": 205,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Vila Real",
+              "Viseu",
+              "Coimbra"
+            ],
+            "g": 206,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Vila Real",
+              "Guarda",
+              "Castelo Branco"
+            ],
+            "g": 263,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Vila Real",
+              "Viseu",
+              "Coimbra",
+              "Leiria"
+            ],
+            "g": 273,
+            "frontier_size_after_pop": 3
+          }
+        ],
+        "expanded_nodes": 12,
+        "success": true
+      }
+    },
+    "attractions": {
+      "origem": [
+        {
+          "name": "Palácio de Mateus",
+          "description": "Palácio conhecido pela sua arquitetura e jardins."
+        },
+        {
+          "name": "Parque Natural do Alvão",
+          "description": "Zona natural com cascatas e trilhos."
+        },
+        {
+          "name": "Centro Histórico",
+          "description": "Zona antiga com comércio e património local."
+        }
+      ],
+      "destino": [
+        {
+          "name": "Castelo de Leiria",
+          "description": "Castelo medieval com vista sobre a cidade."
+        },
+        {
+          "name": "Praça Rodrigues Lobo",
+          "description": "Praça central com esplanadas e comércio."
+        },
+        {
+          "name": "Museu de Leiria",
+          "description": "Espaço dedicado à história e cultura local."
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-23T21:55:58",
+    "vehicle": {
+      "authenticated": true,
+      "detected_plate": "35-PH-85",
+      "owner": "Ismael Magalhães",
+      "vehicle": "Fiat Punto",
+      "source": "Manual"
+    },
+    "origin": "Braga",
+    "goal": "Castelo Branco",
+    "algorithm": "all",
+    "depth_limit": 10,
+    "results": {
+      "ucs": {
+        "algorithm": "ucs",
+        "path": [
+          "Braga",
+          "Porto",
+          "Aveiro",
+          "Coimbra",
+          "Castelo Branco"
+        ],
+        "cost": 348,
+        "iterations": [
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Braga"
+            ],
+            "g": 0,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Braga",
+              "Viana do Castelo"
+            ],
+            "g": 48,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Braga",
+              "Porto"
+            ],
+            "g": 53,
+            "frontier_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Braga",
+              "Vila Real"
+            ],
+            "g": 106,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro"
+            ],
+            "g": 121,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Braga",
+              "Porto",
+              "Viseu"
+            ],
+            "g": 186,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 189,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 236,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Braga",
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 243,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Braga",
+              "Vila Real",
+              "Guarda"
+            ],
+            "g": 263,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 306,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 348,
+            "frontier_size_after_pop": 2
+          }
+        ],
+        "expanded_nodes": 12,
+        "success": true
+      },
+      "dls": {
+        "algorithm": "dls",
+        "path": [
+          "Braga",
+          "Porto",
+          "Aveiro",
+          "Coimbra",
+          "Castelo Branco"
+        ],
+        "cost": 348,
+        "iterations": [
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Braga"
+            ],
+            "g": 0,
+            "depth": 0,
+            "stack_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Braga",
+              "Porto"
+            ],
+            "g": 53,
+            "depth": 1,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro"
+            ],
+            "g": 121,
+            "depth": 2,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 189,
+            "depth": 3,
+            "stack_size_after_pop": 7
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 348,
+            "depth": 4,
+            "stack_size_after_pop": 9
+          }
+        ],
+        "expanded_nodes": 5,
+        "success": true
+      },
+      "greedy": {
+        "algorithm": "greedy",
+        "path": [
+          "Braga",
+          "Vila Real",
+          "Guarda",
+          "Castelo Branco"
+        ],
+        "cost": 369,
+        "iterations": [
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Braga"
+            ],
+            "g": 0,
+            "h": 217.65,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Braga",
+              "Vila Real"
+            ],
+            "g": 106,
+            "h": 166.52,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Braga",
+              "Vila Real",
+              "Guarda"
+            ],
+            "g": 263,
+            "h": 83.22,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Braga",
+              "Vila Real",
+              "Guarda",
+              "Castelo Branco"
+            ],
+            "g": 369,
+            "h": 0.0,
+            "frontier_size_after_pop": 7
+          }
+        ],
+        "expanded_nodes": 4,
+        "success": true
+      },
+      "astar": {
+        "algorithm": "astar",
+        "path": [
+          "Braga",
+          "Porto",
+          "Aveiro",
+          "Coimbra",
+          "Castelo Branco"
+        ],
+        "cost": 348,
+        "iterations": [
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Braga"
+            ],
+            "g": 0,
+            "h": 217.65,
+            "f": 217.65,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Braga",
+              "Porto"
+            ],
+            "g": 53,
+            "h": 194.79,
+            "f": 247.79,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Braga",
+              "Vila Real"
+            ],
+            "g": 106,
+            "h": 166.52,
+            "f": 272.52,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro"
+            ],
+            "g": 121,
+            "h": 157.84,
+            "f": 278.84000000000003,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Braga",
+              "Porto",
+              "Viseu"
+            ],
+            "g": 186,
+            "h": 104.28,
+            "f": 290.28,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 189,
+            "h": 112.41,
+            "f": 301.40999999999997,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Braga",
+              "Viana do Castelo"
+            ],
+            "g": 48,
+            "h": 255.68,
+            "f": 303.68,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Braga",
+              "Vila Real",
+              "Guarda"
+            ],
+            "g": 263,
+            "h": 83.22,
+            "f": 346.22,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 348,
+            "h": 0.0,
+            "f": 348.0,
+            "frontier_size_after_pop": 2
+          }
+        ],
+        "expanded_nodes": 9,
+        "success": true
+      }
+    },
+    "attractions": {
+      "origem": [
+        {
+          "name": "Sé de Braga",
+          "description": "A Sé de Braga é uma catedral católica em estilo românico, construída no século XII. É conhecida por suas arcadas e capelas impressionantes."
+        },
+        {
+          "name": "Biblioteca Pública de Braga",
+          "description": "A Biblioteca Pública de Braga é um edifício do século XVI que abriga uma vasta coleção de livros raros e documentos históricos. É um local importante para a cultura e educação da região."
+        },
+        {
+          "name": "Parque da Ponte",
+          "description": "O Parque da Ponte é um parque urbano ao longo do rio Cávado, oferecendo uma área verde relaxante com paisagens naturais. É um local popular para caminhadas e eventos culturais."
+        }
+      ],
+      "destino": [
+        {
+          "name": "Jardim do Paço",
+          "description": "Jardim barroco com estátuas e lagos."
+        },
+        {
+          "name": "Museu Cargaleiro",
+          "description": "Museu de arte contemporânea."
+        },
+        {
+          "name": "Castelo",
+          "description": "Ruínas com vista sobre a cidade."
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-23T23:40:47",
+    "vehicle": {
+      "authenticated": true,
+      "detected_plate": "12-AA-34",
+      "owner": "Senhor Teste",
+      "vehicle": "1977 Leyland Cars Mini 1000 Mark IV",
+      "source": "OCR (Imagem)"
+    },
+    "origin": "Braga",
+    "goal": "Évora",
+    "algorithm": "all",
+    "depth_limit": 10,
+    "results": {
+      "ucs": {
+        "algorithm": "ucs",
+        "path": [
+          "Braga",
+          "Porto",
+          "Aveiro",
+          "Leiria",
+          "Santarém",
+          "Évora"
+        ],
+        "cost": 423,
+        "iterations": [
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Braga"
+            ],
+            "g": 0,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Braga",
+              "Viana do Castelo"
+            ],
+            "g": 48,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Braga",
+              "Porto"
+            ],
+            "g": 53,
+            "frontier_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Braga",
+              "Vila Real"
+            ],
+            "g": 106,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro"
+            ],
+            "g": 121,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Braga",
+              "Porto",
+              "Viseu"
+            ],
+            "g": 186,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 189,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 236,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Braga",
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 243,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Braga",
+              "Vila Real",
+              "Guarda"
+            ],
+            "g": 263,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 306,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 348,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria",
+              "Lisboa"
+            ],
+            "g": 365,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Setúbal",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Setúbal"
+            ],
+            "g": 415,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Évora"
+            ],
+            "g": 423,
+            "frontier_size_after_pop": 3
+          }
+        ],
+        "expanded_nodes": 15,
+        "success": true
+      },
+      "dls": {
+        "algorithm": "dls",
+        "path": [
+          "Braga",
+          "Porto",
+          "Aveiro",
+          "Coimbra",
+          "Castelo Branco",
+          "Portalegre",
+          "Évora"
+        ],
+        "cost": 559,
+        "iterations": [
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Braga"
+            ],
+            "g": 0,
+            "depth": 0,
+            "stack_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Braga",
+              "Porto"
+            ],
+            "g": 53,
+            "depth": 1,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro"
+            ],
+            "g": 121,
+            "depth": 2,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 189,
+            "depth": 3,
+            "stack_size_after_pop": 7
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 348,
+            "depth": 4,
+            "stack_size_after_pop": 9
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda"
+            ],
+            "g": 454,
+            "depth": 5,
+            "stack_size_after_pop": 11
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda",
+              "Bragança"
+            ],
+            "g": 656,
+            "depth": 6,
+            "stack_size_after_pop": 13
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda",
+              "Bragança",
+              "Vila Real"
+            ],
+            "g": 793,
+            "depth": 7,
+            "stack_size_after_pop": 13
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda",
+              "Bragança",
+              "Vila Real",
+              "Viseu"
+            ],
+            "g": 903,
+            "depth": 8,
+            "stack_size_after_pop": 13
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda",
+              "Vila Real"
+            ],
+            "g": 611,
+            "depth": 6,
+            "stack_size_after_pop": 12
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda",
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 748,
+            "depth": 7,
+            "stack_size_after_pop": 13
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda",
+              "Vila Real",
+              "Viseu"
+            ],
+            "g": 721,
+            "depth": 7,
+            "stack_size_after_pop": 12
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda",
+              "Viseu"
+            ],
+            "g": 539,
+            "depth": 6,
+            "stack_size_after_pop": 11
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda",
+              "Viseu",
+              "Vila Real"
+            ],
+            "g": 649,
+            "depth": 7,
+            "stack_size_after_pop": 11
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda",
+              "Viseu",
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 786,
+            "depth": 8,
+            "stack_size_after_pop": 11
+          },
+          {
+            "expanded_city": "Portalegre",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Portalegre"
+            ],
+            "g": 428,
+            "depth": 5,
+            "stack_size_after_pop": 10
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Portalegre",
+              "Évora"
+            ],
+            "g": 559,
+            "depth": 6,
+            "stack_size_after_pop": 10
+          }
+        ],
+        "expanded_nodes": 17,
+        "success": true
+      },
+      "greedy": {
+        "algorithm": "greedy",
+        "path": [
+          "Braga",
+          "Porto",
+          "Viseu",
+          "Coimbra",
+          "Castelo Branco",
+          "Évora"
+        ],
+        "cost": 644,
+        "iterations": [
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Braga"
+            ],
+            "g": 0,
+            "h": 335.03,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Braga",
+              "Porto"
+            ],
+            "g": 53,
+            "h": 297.93,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Braga",
+              "Porto",
+              "Viseu"
+            ],
+            "g": 186,
+            "h": 231.99,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Braga",
+              "Porto",
+              "Viseu",
+              "Coimbra"
+            ],
+            "g": 282,
+            "h": 190.01,
+            "frontier_size_after_pop": 8
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Braga",
+              "Porto",
+              "Viseu",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 441,
+            "h": 146.59,
+            "frontier_size_after_pop": 10
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Braga",
+              "Porto",
+              "Viseu",
+              "Coimbra",
+              "Castelo Branco",
+              "Évora"
+            ],
+            "g": 644,
+            "h": 0.0,
+            "frontier_size_after_pop": 12
+          }
+        ],
+        "expanded_nodes": 6,
+        "success": true
+      },
+      "astar": {
+        "algorithm": "astar",
+        "path": [
+          "Braga",
+          "Porto",
+          "Aveiro",
+          "Leiria",
+          "Santarém",
+          "Évora"
+        ],
+        "cost": 423,
+        "iterations": [
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Braga"
+            ],
+            "g": 0,
+            "h": 335.03,
+            "f": 335.03,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Braga",
+              "Porto"
+            ],
+            "g": 53,
+            "h": 297.93,
+            "f": 350.93,
+            "frontier_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro"
+            ],
+            "g": 121,
+            "h": 243.97,
+            "f": 364.97,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 189,
+            "h": 190.01,
+            "f": 379.01,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 236,
+            "h": 163.64,
+            "f": 399.64,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Braga",
+              "Viana do Castelo"
+            ],
+            "g": 48,
+            "h": 361.33,
+            "f": 409.33,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Braga",
+              "Vila Real"
+            ],
+            "g": 106,
+            "h": 303.56,
+            "f": 409.56,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Braga",
+              "Porto",
+              "Viseu"
+            ],
+            "g": 186,
+            "h": 231.99,
+            "f": 417.99,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 306,
+            "h": 113.15,
+            "f": 419.15,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Braga",
+              "Porto",
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Évora"
+            ],
+            "g": 423,
+            "h": 0.0,
+            "f": 423.0,
+            "frontier_size_after_pop": 4
+          }
+        ],
+        "expanded_nodes": 10,
+        "success": true
+      }
+    },
+    "attractions": {
+      "origem": [
+        {
+          "name": "Sé de Braga",
+          "description": "A catedral gótica de Portugal, um símbolo da cidade e património histórico"
+        },
+        {
+          "name": "Bolsa dos Mercadores",
+          "description": "Um edifício manuelino em estilo arquitetónico único com vista para a praça"
+        },
+        {
+          "name": "Mosteiro dos TerMIos",
+          "description": "Um mosteiro fundado no século XI, um local de grande importância histórica e cultural"
+        }
+      ],
+      "destino": [
+        {
+          "name": "Templo Romano",
+          "description": "Ruínas bem preservadas do período romano."
+        },
+        {
+          "name": "Capela dos Ossos",
+          "description": "Capela conhecida pela decoração com ossos humanos."
+        },
+        {
+          "name": "Sé de Évora",
+          "description": "Catedral com vista sobre a cidade."
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-24T00:40:49",
+    "vehicle": {
+      "authenticated": true,
+      "detected_plate": "12-AA-34",
+      "owner": "Senhor Teste",
+      "vehicle": "1977 Leyland Cars Mini 1000 Mark IV",
+      "source": "OCR (Imagem)"
+    },
+    "origin": "Aveiro",
+    "goal": "Beja",
+    "algorithm": "dls",
+    "depth_limit": 3,
+    "results": {
+      "dls": {
+        "algorithm": "dls",
+        "path": [],
+        "cost": Infinity,
+        "iterations": [
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Aveiro"
+            ],
+            "g": 0,
+            "depth": 0,
+            "stack_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 68,
+            "depth": 1,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 227,
+            "depth": 2,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda"
+            ],
+            "g": 333,
+            "depth": 3,
+            "stack_size_after_pop": 7
+          },
+          {
+            "expanded_city": "Portalegre",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Portalegre"
+            ],
+            "g": 307,
+            "depth": 3,
+            "stack_size_after_pop": 6
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Évora"
+            ],
+            "g": 430,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Leiria"
+            ],
+            "g": 135,
+            "depth": 2,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Leiria",
+              "Lisboa"
+            ],
+            "g": 264,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 205,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Viseu"
+            ],
+            "g": 164,
+            "depth": 2,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Viseu",
+              "Guarda"
+            ],
+            "g": 249,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Viseu",
+              "Porto"
+            ],
+            "g": 297,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Viseu",
+              "Vila Real"
+            ],
+            "g": 274,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 115,
+            "depth": 1,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Coimbra"
+            ],
+            "g": 182,
+            "depth": 2,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 341,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Coimbra",
+              "Viseu"
+            ],
+            "g": 278,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa"
+            ],
+            "g": 244,
+            "depth": 2,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Faro",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Faro"
+            ],
+            "g": 543,
+            "depth": 3,
+            "stack_size_after_pop": 6
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Santarém"
+            ],
+            "g": 322,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Setúbal",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Setúbal"
+            ],
+            "g": 294,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Évora"
+            ],
+            "g": 394,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 185,
+            "depth": 2,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Lisboa"
+            ],
+            "g": 263,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Évora"
+            ],
+            "g": 302,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Aveiro",
+              "Porto"
+            ],
+            "g": 68,
+            "depth": 1,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Braga"
+            ],
+            "g": 121,
+            "depth": 2,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Braga",
+              "Viana do Castelo"
+            ],
+            "g": 169,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Braga",
+              "Vila Real"
+            ],
+            "g": 227,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viana do Castelo"
+            ],
+            "g": 139,
+            "depth": 2,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viana do Castelo",
+              "Braga"
+            ],
+            "g": 187,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real"
+            ],
+            "g": 184,
+            "depth": 2,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real",
+              "Braga"
+            ],
+            "g": 290,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 321,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real",
+              "Guarda"
+            ],
+            "g": 341,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real",
+              "Viseu"
+            ],
+            "g": 294,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viseu"
+            ],
+            "g": 201,
+            "depth": 2,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viseu",
+              "Coimbra"
+            ],
+            "g": 297,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viseu",
+              "Guarda"
+            ],
+            "g": 286,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viseu",
+              "Vila Real"
+            ],
+            "g": 311,
+            "depth": 3,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Viseu"
+            ],
+            "g": 95,
+            "depth": 1,
+            "stack_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Coimbra"
+            ],
+            "g": 191,
+            "depth": 2,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 350,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Coimbra",
+              "Leiria"
+            ],
+            "g": 258,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Guarda"
+            ],
+            "g": 180,
+            "depth": 2,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Guarda",
+              "Bragança"
+            ],
+            "g": 382,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Guarda",
+              "Castelo Branco"
+            ],
+            "g": 286,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Guarda",
+              "Vila Real"
+            ],
+            "g": 337,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Porto"
+            ],
+            "g": 228,
+            "depth": 2,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Porto",
+              "Braga"
+            ],
+            "g": 281,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Porto",
+              "Viana do Castelo"
+            ],
+            "g": 299,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Porto",
+              "Vila Real"
+            ],
+            "g": 344,
+            "depth": 3,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real"
+            ],
+            "g": 205,
+            "depth": 2,
+            "stack_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real",
+              "Braga"
+            ],
+            "g": 311,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 342,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real",
+              "Guarda"
+            ],
+            "g": 362,
+            "depth": 3,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real",
+              "Porto"
+            ],
+            "g": 321,
+            "depth": 3,
+            "stack_size_after_pop": 0
+          }
+        ],
+        "expanded_nodes": 57,
+        "success": false
+      }
+    },
+    "attractions": {
+      "origem": [
+        {
+          "name": "Jardim do Paiva de Andrade",
+          "description": "Um jardim público com uma grande variedade de plantas e flores"
+        },
+        {
+          "name": "Museu de Aveiro",
+          "description": "Um museu que apresenta a história e cultura da cidade"
+        },
+        {
+          "name": "Praia da Barra",
+          "description": "Uma praia urbana com areias finas e águas tranquilas"
+        }
+      ],
+      "destino": [
+        {
+          "name": "Cidade de Beja",
+          "description": "Centro histórico com ruínas romanas e um castelo medieval."
+        },
+        {
+          "name": "Museu de Arte Moderna da Costa Nova",
+          "description": "Obras de arte moderna, incluindo esculturas e pinturas."
+        },
+        {
+          "name": "Lagos da Bemposta",
+          "description": "Parque natural com belas paisagens e oportunidades para a prática de esportes ao ar livre."
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-04-24T00:49:47",
+    "vehicle": {
+      "authenticated": true,
+      "detected_plate": "12-AA-34",
+      "owner": "Senhor Teste",
+      "vehicle": "1977 Leyland Cars Mini 1000 Mark IV",
+      "source": "OCR (Imagem)"
+    },
+    "origin": "Aveiro",
+    "goal": "Beja",
+    "algorithm": "all",
+    "depth_limit": 3,
+    "results": {
+      "ucs": {
+        "algorithm": "ucs",
+        "path": [
+          "Aveiro",
+          "Leiria",
+          "Santarém",
+          "Évora",
+          "Beja"
+        ],
+        "cost": 380,
+        "iterations": [
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Aveiro"
+            ],
+            "g": 0,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 68,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Aveiro",
+              "Porto"
+            ],
+            "g": 68,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Viseu"
+            ],
+            "g": 95,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 115,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Braga"
+            ],
+            "g": 121,
+            "frontier_size_after_pop": 6
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viana do Castelo"
+            ],
+            "g": 139,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Guarda"
+            ],
+            "g": 180,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real"
+            ],
+            "g": 184,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 185,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 227,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa"
+            ],
+            "g": 244,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Setúbal",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Setúbal"
+            ],
+            "g": 294,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Évora"
+            ],
+            "g": 302,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Portalegre",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Portalegre"
+            ],
+            "g": 307,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 321,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Beja",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Évora",
+              "Beja"
+            ],
+            "g": 380,
+            "frontier_size_after_pop": 3
+          }
+        ],
+        "expanded_nodes": 17,
+        "success": true
+      },
+      "dls": {
+        "algorithm": "dls",
+        "path": [],
+        "cost": Infinity,
+        "iterations": [
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Aveiro"
+            ],
+            "g": 0,
+            "depth": 0,
+            "stack_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 68,
+            "depth": 1,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 227,
+            "depth": 2,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Guarda"
+            ],
+            "g": 333,
+            "depth": 3,
+            "stack_size_after_pop": 7
+          },
+          {
+            "expanded_city": "Portalegre",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Portalegre"
+            ],
+            "g": 307,
+            "depth": 3,
+            "stack_size_after_pop": 6
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Castelo Branco",
+              "Évora"
+            ],
+            "g": 430,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Leiria"
+            ],
+            "g": 135,
+            "depth": 2,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Leiria",
+              "Lisboa"
+            ],
+            "g": 264,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 205,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Viseu"
+            ],
+            "g": 164,
+            "depth": 2,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Viseu",
+              "Guarda"
+            ],
+            "g": 249,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Viseu",
+              "Porto"
+            ],
+            "g": 297,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Coimbra",
+              "Viseu",
+              "Vila Real"
+            ],
+            "g": 274,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 115,
+            "depth": 1,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Coimbra"
+            ],
+            "g": 182,
+            "depth": 2,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 341,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Coimbra",
+              "Viseu"
+            ],
+            "g": 278,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa"
+            ],
+            "g": 244,
+            "depth": 2,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Faro",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Faro"
+            ],
+            "g": 543,
+            "depth": 3,
+            "stack_size_after_pop": 6
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Santarém"
+            ],
+            "g": 322,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Setúbal",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Setúbal"
+            ],
+            "g": 294,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Évora"
+            ],
+            "g": 394,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 185,
+            "depth": 2,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Lisboa"
+            ],
+            "g": 263,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Évora"
+            ],
+            "g": 302,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Aveiro",
+              "Porto"
+            ],
+            "g": 68,
+            "depth": 1,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Braga"
+            ],
+            "g": 121,
+            "depth": 2,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Braga",
+              "Viana do Castelo"
+            ],
+            "g": 169,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Braga",
+              "Vila Real"
+            ],
+            "g": 227,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viana do Castelo"
+            ],
+            "g": 139,
+            "depth": 2,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viana do Castelo",
+              "Braga"
+            ],
+            "g": 187,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real"
+            ],
+            "g": 184,
+            "depth": 2,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real",
+              "Braga"
+            ],
+            "g": 290,
+            "depth": 3,
+            "stack_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 321,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real",
+              "Guarda"
+            ],
+            "g": 341,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Vila Real",
+              "Viseu"
+            ],
+            "g": 294,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viseu"
+            ],
+            "g": 201,
+            "depth": 2,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viseu",
+              "Coimbra"
+            ],
+            "g": 297,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viseu",
+              "Guarda"
+            ],
+            "g": 286,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Porto",
+              "Viseu",
+              "Vila Real"
+            ],
+            "g": 311,
+            "depth": 3,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Viseu",
+            "path": [
+              "Aveiro",
+              "Viseu"
+            ],
+            "g": 95,
+            "depth": 1,
+            "stack_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Coimbra"
+            ],
+            "g": 191,
+            "depth": 2,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Coimbra",
+              "Castelo Branco"
+            ],
+            "g": 350,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Coimbra",
+              "Leiria"
+            ],
+            "g": 258,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Guarda"
+            ],
+            "g": 180,
+            "depth": 2,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Guarda",
+              "Bragança"
+            ],
+            "g": 382,
+            "depth": 3,
+            "stack_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Castelo Branco",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Guarda",
+              "Castelo Branco"
+            ],
+            "g": 286,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Guarda",
+              "Vila Real"
+            ],
+            "g": 337,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Porto"
+            ],
+            "g": 228,
+            "depth": 2,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Porto",
+              "Braga"
+            ],
+            "g": 281,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Viana do Castelo",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Porto",
+              "Viana do Castelo"
+            ],
+            "g": 299,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Porto",
+              "Vila Real"
+            ],
+            "g": 344,
+            "depth": 3,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Vila Real",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real"
+            ],
+            "g": 205,
+            "depth": 2,
+            "stack_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Braga",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real",
+              "Braga"
+            ],
+            "g": 311,
+            "depth": 3,
+            "stack_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Bragança",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real",
+              "Bragança"
+            ],
+            "g": 342,
+            "depth": 3,
+            "stack_size_after_pop": 2
+          },
+          {
+            "expanded_city": "Guarda",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real",
+              "Guarda"
+            ],
+            "g": 362,
+            "depth": 3,
+            "stack_size_after_pop": 1
+          },
+          {
+            "expanded_city": "Porto",
+            "path": [
+              "Aveiro",
+              "Viseu",
+              "Vila Real",
+              "Porto"
+            ],
+            "g": 321,
+            "depth": 3,
+            "stack_size_after_pop": 0
+          }
+        ],
+        "expanded_nodes": 57,
+        "success": false
+      },
+      "greedy": {
+        "algorithm": "greedy",
+        "path": [
+          "Aveiro",
+          "Leiria",
+          "Lisboa",
+          "Évora",
+          "Beja"
+        ],
+        "cost": 472,
+        "iterations": [
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Aveiro"
+            ],
+            "g": 0,
+            "h": 304.35,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 115,
+            "h": 218.6,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Lisboa",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa"
+            ],
+            "g": 244,
+            "h": 161.94,
+            "frontier_size_after_pop": 5
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Évora"
+            ],
+            "g": 394,
+            "h": 61.96,
+            "frontier_size_after_pop": 8
+          },
+          {
+            "expanded_city": "Beja",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Lisboa",
+              "Évora",
+              "Beja"
+            ],
+            "g": 472,
+            "h": 0.0,
+            "frontier_size_after_pop": 12
+          }
+        ],
+        "expanded_nodes": 5,
+        "success": true
+      },
+      "astar": {
+        "algorithm": "astar",
+        "path": [
+          "Aveiro",
+          "Leiria",
+          "Santarém",
+          "Évora",
+          "Beja"
+        ],
+        "cost": 380,
+        "iterations": [
+          {
+            "expanded_city": "Aveiro",
+            "path": [
+              "Aveiro"
+            ],
+            "g": 0,
+            "h": 304.35,
+            "f": 304.35,
+            "frontier_size_after_pop": 0
+          },
+          {
+            "expanded_city": "Coimbra",
+            "path": [
+              "Aveiro",
+              "Coimbra"
+            ],
+            "g": 68,
+            "h": 250.88,
+            "f": 318.88,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Leiria",
+            "path": [
+              "Aveiro",
+              "Leiria"
+            ],
+            "g": 115,
+            "h": 218.6,
+            "f": 333.6,
+            "frontier_size_after_pop": 3
+          },
+          {
+            "expanded_city": "Santarém",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém"
+            ],
+            "g": 185,
+            "h": 163.43,
+            "f": 348.43,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Évora",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Évora"
+            ],
+            "g": 302,
+            "h": 61.96,
+            "f": 363.96,
+            "frontier_size_after_pop": 4
+          },
+          {
+            "expanded_city": "Beja",
+            "path": [
+              "Aveiro",
+              "Leiria",
+              "Santarém",
+              "Évora",
+              "Beja"
+            ],
+            "g": 380,
+            "h": 0.0,
+            "f": 380.0,
+            "frontier_size_after_pop": 6
+          }
+        ],
+        "expanded_nodes": 6,
+        "success": true
+      }
+    },
+    "attractions": {
+      "origem": [
+        {
+          "name": "Jardim do Paiva de Andrade",
+          "description": "Um jardim público com uma grande variedade de plantas e flores"
+        },
+        {
+          "name": "Museu de Aveiro",
+          "description": "Um museu que apresenta a história e cultura da cidade"
+        },
+        {
+          "name": "Praia da Barra",
+          "description": "Uma praia urbana com areias finas e águas tranquilas"
+        }
+      ],
+      "destino": [
+        {
+          "name": "Cidade de Beja",
+          "description": "Centro histórico com ruínas romanas e um castelo medieval."
+        },
+        {
+          "name": "Museu de Arte Moderna da Costa Nova",
+          "description": "Obras de arte moderna, incluindo esculturas e pinturas."
+        },
+        {
+          "name": "Lagos da Bemposta",
+          "description": "Parque natural com belas paisagens e oportunidades para a prática de esportes ao ar livre."
+        }
+      ]
+    }
   }
 ]
