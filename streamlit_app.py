@@ -307,7 +307,7 @@ if run:
         st.session_state['atracoes_destino'] = atr_destino
 
         # =========================================================================
-        # --- GERAR HISTÓRICO E RELATÓRIO (Agora tem acesso correto aos results) ---
+        # --- GERAR HISTÓRICO E RELATÓRIO ---
         # =========================================================================
         history_entry = {
             "timestamp": now_iso(),
